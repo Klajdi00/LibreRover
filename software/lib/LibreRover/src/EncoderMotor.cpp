@@ -39,11 +39,6 @@ void EncoderMotor::drive_distance(int32_t distance_mm, int16_t speed_mm_per_s, b
 	target_pulse_count = encoder.get_pulse_count() +  abs(distance_mm) / distance_per_encoder_pulse_mm + 0.5;
 	target_speed_mm_per_s = abs(speed_mm_per_s);
 	
-	// if(backward)
-	// 	motor.drive(-abs(speed_percent));
-	// else
-	// 	motor.drive(abs(speed_percent));
-	
 	// The motor will be started in the tick() function by the control loop
 	
 	if(blocking)
@@ -84,9 +79,7 @@ void EncoderMotor::tick()
 	
 	calculate_speed();
 	speed_control();
-	// Serial.println("  Current speed: " + String(current_speed_mm_per_s) + " mm/s");
-	// speed_control();
-	
+
 	motor.tick();
 }
 
@@ -148,25 +141,7 @@ void EncoderMotor::speed_control()
 	// 	" % (" + String(feed_forward) + "% feed-forward, " + String(pid_output) + "% PID)"
 	// );
 
-	// motor.set_speed(pid_output);
 	motor.drive(backward ? -new_setpoint : new_setpoint);
-		
-	// WIP
-	
-		
-	
-	// unsigned long now_ms = millis();
-	// float dt_s = (now_ms - last_control_loop_at_ms) / 1000.0f;
-	// last_control_loop_at_ms = now_ms;
-	
-	// float actual_speed_mm_per_s = encoder.get_pulse_count() * distance_per_encoder_pulse_mm / dt_s;
-	// current_speed_mm_per_s = 0.5f * current_speed_mm_per_s + 0.5f * actual_speed_mm_per_s; // low-pass filter
-	
-	// int16_t speed_percent = (int16_t) (current_speed_mm_per_s / target_speed_mm_per_s * 255);
-	// if(backward)
-	// 	speed_percent = -speed_percent;
-	
-	// motor.set_speed(abs(speed_percent));
 }
 
 void EncoderMotor::wait_until_complete()

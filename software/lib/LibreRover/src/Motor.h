@@ -18,7 +18,6 @@ class Motor
 	uint8_t speed_percent;
 	
 	
-	
 	public:
 	Motor(uint8_t pin_forward, uint8_t pin_backward, uint8_t pin_pwm, uint8_t min_speed_pwm = 0, uint8_t max_speed_pwm = 255, bool reverse = true);
 	
@@ -38,7 +37,8 @@ class Motor
 	
 	// void hard_stop()
 	// {
-	// 	throw "Not implemented yet";
+	// 	throw "Not implemented yet";	// Power both direction pins for a short amount of time.
+										// Either blocking or we need to be sure that tick() still is called frequently...
 	// }
 };
 

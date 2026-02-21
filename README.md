@@ -28,10 +28,10 @@ If you use the Arduino IDE, make sure to add the files in `software/lib/LibreRov
 
 | Component | Quantity | Estimated Cost | Notes |
 |-----------|----------|----------------|-------|
-| Arduino Nano | 1 | 3.50 € | Or compatible clone |
-| DC Motors with Encoders | 2 | 3.00 € | TT motor; recommended to buy a set with wheels |
+| Arduino Nano | 1 | 3.40 € | Or compatible clone |
+| DC Motors with Encoders | 2 | 2.80 € | TT motor; recommended to buy a set with wheels |
 | Motor Driver (HW-201 or L298N) | 1 | 2.50 € | Dual H-bridge driver |
-| 9V Battery | 1 | 4.00 € | Power supply |
+| 9V Battery | 1 | 3.50 € | Power supply |
 | Jumper Wires | Several | 3.80 € | For connections |
 | Light gate LM393 (for simple encoder) | 2 | 3.20 € | optional |
 | HW-201 IR reflection sensor | 2 | 1.30 € | optional |
@@ -39,9 +39,7 @@ If you use the Arduino IDE, make sure to add the files in `software/lib/LibreRov
 | Others | - | 1 € | 9 V Battery cable, swith for turning on/off |
 
 
-
-**Estimated Total Cost**: ~20 € (excluding 3D printer)
-
+**Estimated Total Cost**: ~17 to 27 € (depending on your setup; excluding 3D printer)
 
 
 ## Hardware assembly

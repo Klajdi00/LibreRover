@@ -13,9 +13,7 @@ class EncoderMotor
 	Motor& motor;
 	SimpleEncoder& encoder;
 	PIDController speed_pid;
-	
-	public:		// only for debugging, should be private
-	
+		
 	bool backward;
 	float target_speed_mm_per_s;
 	float current_speed_mm_per_s;
