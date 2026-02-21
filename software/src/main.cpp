@@ -3,15 +3,18 @@
 #include <Motor.h>
 #include <SimpleEncoder.h>
 #include <EncoderMotor.h>
+#include <BinarySensor.h>
 
 
 Motor simple_motor_left(9, 10, 11, 50, 255 / 9. * 6.5);
-Motor simple_motor_right(7, 8, 6, 50, 255 / 9. * 6.5);
+Motor simple_motor_right(7, 8, 6, 70, 255 / 9. * 6.5);
 SimpleEncoder encoder_left(3);
 SimpleEncoder encoder_right(2);
 EncoderMotor motor_left(simple_motor_left, encoder_left, 251, 40, 350);
 EncoderMotor motor_right(simple_motor_right, encoder_right, 251, 40, 350);
 
+BinarySensor line_left(4);
+BinarySensor line_right(5);
 
 void wait_until_motors_finished()
 {
@@ -40,6 +43,36 @@ void loop() {
 	digitalWrite(LED_BUILTIN, LOW);    // turn the LED off by making the voltage LOW
 	delay(500);                       // wait for a second
 	
+	
+	
+	while(true)
+	{
+		if(line_left.is_high())
+		{
+			// Left sensor is on the line
+			motor_left.drive(-50);
+		}
+		else
+		{
+			motor_left.drive(50);
+		}
+		
+		if(line_right.is_high())
+		{
+			// Right sensor is on the line
+			motor_right.drive(-50);
+		}
+		else
+		{
+			motor_right.drive(50);
+		}
+	}
+	
+	
+	
+	
+	
+	
 	// simple_motor_right.forward(10);
 	
 	// motor_right.drive_distance(150, 150);
@@ -63,13 +96,13 @@ void loop() {
 	// 	}
 	// }
 	
-	motor_left.drive_distance(250, 150);
-	motor_right.drive_distance(250, 150);
-	wait_until_motors_finished();
-	delay(500);
-	motor_left.drive_distance(-75, 150);
-	motor_right.drive_distance(75, 150);
-	wait_until_motors_finished();
+	// motor_left.drive_distance(250, 150);
+	// motor_right.drive_distance(250, 150);
+	// wait_until_motors_finished();
+	// delay(500);
+	// motor_left.drive_distance(-75, 150);
+	// motor_right.drive_distance(75, 150);
+	// wait_until_motors_finished();
 	
 	
 	

@@ -36,7 +36,7 @@ If you use the Arduino IDE, make sure to add the files in `software/lib/LibreRov
 | Light gate LM393 (for simple encoder) | 2 | 3.20 € | optional |
 | HW-201 IR reflection sensor | 2 | 1.30 € | optional |
 | VL53L0X ToF distance sensor | 3 | 4.00 € | optional |
-| Others | - | 1 € | 9 V Battery cable, swith for turning on/off |
+| Others | - | 1.00 € | 9 V Battery cable, swith for turning on/off |
 
 
 **Estimated Total Cost**: ~17 to 27 € (depending on your setup; excluding 3D printer)
