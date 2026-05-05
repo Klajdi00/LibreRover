@@ -25,7 +25,6 @@ void wait_until_motors_finished()
 	}
 }
 
-
 void setup() {
 	pinMode(LED_BUILTIN, OUTPUT);
 	
