@@ -1,0 +1,15 @@
+# Proposed by Robotheca for this repository. Every line is yours to
+# change: check it before merging.
+
+format_version: "1.0"
+name: LibreRover
+summary: A small 3D-printed educational robot for Arduino workshops, built from cheap breakout boards and gear motors.
+category: rover
+difficulty: beginner
+license:
+  hardware: CERN-OHL-P-2.0
+  software: MIT
+source:
+  repository: https://github.com/buchbergerd/LibreRover
+tools:
+  - 3D printer
